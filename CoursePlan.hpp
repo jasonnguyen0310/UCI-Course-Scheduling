@@ -1,14 +1,13 @@
 /*
 
-Schedule.hpp
+CoursePlan.hpp
 Author: Jason Nguyen
 Date: May 17 2021
 
 */
 
-#ifndef SCHEDULE_H
-#define SCHEDULE_H
-
+#ifndef COURSEPLAN_H
+#define COURSEPLAN_H
 
 #include <vector>
 #include <list>
@@ -18,13 +17,12 @@ Date: May 17 2021
 
 using namespace std;
 
-class Schedule : public vector<list<pair<string,string>>>
+struct CoursePlan : public vector<list<pair<string,string>>>
 {
     public:
         using vector<list<pair<string,string>>>::vector;
-        int value;
-        Schedule(string filename);
+        CoursePlan(string filename);
 };
 
 
-#endif /* SCHEDULE_H */
+#endif /* COURSEPLAN_H */

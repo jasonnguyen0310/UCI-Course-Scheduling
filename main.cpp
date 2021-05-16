@@ -10,27 +10,23 @@ Date: May 17 2021
 #include <cmath>
 #include <cstdlib>
 #include "Schedule.hpp"
+#include "Preferences.hpp"
+#include "CoursePlan.hpp"
+#include "RelatedCourseList.hpp"
 using namespace std;
 
 int main(int, char *argv[]) {
 
-    Schedule s("inputSchedule.txt");
-
-
-    //  inputSchedule is processed so that lectures, labs, discussion do not conflict with each other. 
+    Schedule init_sch{"inputSchedule.txt"}; // the starting schedule, could be last years schedule, random, bad
+    CoursePlan coursePlans{"coursePlans.txt"};
+    Preferences prefs{"instructors.txt"}; // preferences for ALL instructors, teaching or not
+    RelatedCourseList relatedCourses {init_sch}; // group lec, lab, discussions
     
-
-
-
-
-
-
-
-
-
+    
+    
     // output schedule in same format as "inputSchedule.txt"
     bool noEndl = true;
-    for (auto v: s)
+    for (auto& v: init_sch)
     {
         if (noEndl)
         {
@@ -40,13 +36,13 @@ int main(int, char *argv[]) {
         {
             cout << endl;
         }
-        for (auto l: v)
+        for (auto& l: v)
         {
             string line;
             line = l.first + "=> " + l.second;
             cout << line << endl;
         } 
-
     }
+    
     return 0;
 }

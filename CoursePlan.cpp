@@ -1,16 +1,15 @@
 /*
 
-Schedule.cpp
+CoursePlan.cpp
 Author: Jason Nguyen
 Date: May 17 2021
 
 */
 
-
-#include "Schedule.hpp"
+#include "CoursePlan.hpp"
 using namespace std;
 
-Schedule::Schedule(string filename)
+CoursePlan::CoursePlan(string filename)
 {
     ifstream myfile(filename);
 
@@ -34,11 +33,7 @@ Schedule::Schedule(string filename)
                 tempList.push_back(tempPair);
             }
         }
-
-        push_back(tempList);
-        tempList.clear();
         myfile.close();
     }
       
 }
-
