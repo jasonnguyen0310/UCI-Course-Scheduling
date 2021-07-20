@@ -34,17 +34,17 @@ minute slots with a ten-minute break before the start of every course. (So a cou
 minutes long and start at 9:10, 9:40, 10:10, 10:40 and so on).
 
 
-course => I&C SCI 31
-type => LEC
-days => TR
-start-time => 910
-duration => 80
-instructor => KLEFSTAD
-course => I&C SCI 31
-type => DIS
-days => W
-start-time => 910duration => 80
-instructor => KLEFSTAD
+course => I&C SCI 31<br />
+type => LEC<br /><br />
+days => TR<br />
+start-time => 910<br />
+duration => 80<br />
+instructor => KLEFSTAD<br />
+course => I&C SCI 31<br />
+type => DIS<br />
+days => W<br />
+start-time => 910duration => 80<br />
+instructor => KLEFSTAD<br />
 
 
 **coursePlans** lists courses that should be taken together.
@@ -57,13 +57,18 @@ instructor => KLEFSTAD
 ## Approach: Hill Climbing
 
 A given problem may have many solutions. However, the number of constraints is quite large and difficult for a 
-human to solve. It is an ideal application of Hill Climbing which is based on Gradient Descent (or Ascent in this 
+human to solve. It is an ideal application of **Hill Climbing** which is based on **Gradient Descent** (or Ascent in this 
 case). An optimal solution lies at the peak of some mountain in the problem search space, e.g., the Global 
 Maxima in the figure above. Start with some solution (even a really poor one) and evaluate the quality of that 
 solution using an evaluation function. To find the peak, look at all (or each one in turn) of the neighboring 
 points. If a change improves the current solution (move upward) make that move. The algorithm can pick the 
-best improvement (expensive, Discrete Space Hill Climbing Link) or just any improvement (easy, Greedy Hill 
-Climbing Link). One weakness of Hill Climbing is that some problem spaces have local maxima (smaller 
+best improvement (expensive, Discrete Space Hill Climbing) or just any improvement (easy, Greedy Hill 
+Climbing). One weakness of Hill Climbing is that some problem spaces have local maxima (smaller 
 peaks) where we can end up and get stuck. If we get on to one of these local maxima humps, we may never 
 find the global maxima because that would require going down hill for quite a while to cross the saddle point. 
-There is an approach to dealing with this problem called Simulated Anealing. We can safely ignore this for now. The next step is to define the evaluation function, EVAL(State s).
+There is an approach to dealing with this problem called **Simulated Anealing**.
+
+
+## Citation
+
+All project details and documentation belong to [Professor Klefstad's](https://www.ics.uci.edu/~klefstad/) CS 103 at the University of California Irvine.
